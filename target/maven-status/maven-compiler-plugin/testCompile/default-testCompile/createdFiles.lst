@@ -1,5 +1,5 @@
-com/zai/weather/service/impl/WeatherStackServiceTest.class
-com/zai/weather/service/impl/OpenWeatherMapServiceTest.class
-com/zai/weather/WeatherApplicationTests.class
-com/zai/weather/service/WeatherServiceTest.class
-com/zai/weather/controller/WeatherControllerTest.class
+com\zai\weather\WeatherApplicationTests.class
+com\zai\weather\service\impl\OpenWeatherMapServiceTest.class
+com\zai\weather\service\WeatherServiceTest.class
+com\zai\weather\controller\WeatherControllerTest.class
+com\zai\weather\service\impl\WeatherStackServiceTest.class
