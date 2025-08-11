@@ -1,0 +1,66 @@
+server:
+  port: 8000
+  servlet:
+    context-path: /
+
+spring:
+  application:
+    name: weather-service
+  
+  # H2 Database Configuration
+  datasource:
+    url: jdbc:h2:mem:weatherdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password: password
+    
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+        
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+      
+  # Cache Configuration
+  cache:
+    cache-names: weatherData
+    caffeine:
+      spec: maximumSize=1000,expireAfterWrite=3s
+
+# Weather API Configuration
+weather:
+  providers:
+    weatherstack:
+      url: http://api.weatherstack.com/current
+      api-key: ${WEATHERSTACK_API_KEY:default_weatherstack_key}
+      timeout: 5000
+    openweathermap:
+      url: http://api.openweathermap.org/data/2.5/weather
+      api-key: ${OPENWEATHERMAP_API_KEY:2326504fb9b100bee21400190e4dbe6d}
+      timeout: 5000
+      
+# Logging Configuration
+logging:
+  level:
+    com.zai.weather: DEBUG
+    org.springframework.cache: DEBUG
+    org.springframework.web.client: DEBUG
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %logger{36} - %level - %msg%n"
+
+# Actuator Configuration
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,cache
+  endpoint:
+    health:
+      show-details: always

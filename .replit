@@ -1,2 +1,39 @@
+modules = ["java", "java-17"]
 [agent]
 expertMode = true
+
+[nix]
+channel = "stable-25_05"
+packages = ["maven"]
+
+[workflows]
+runButton = "Project"
+
+[[workflows.workflow]]
+name = "Project"
+mode = "parallel"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Spring Boot Weather Service"
+
+[[workflows.workflow]]
+name = "Spring Boot Weather Service"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "mvn clean install && mvn spring-boot:run"
+waitForPort = 8000
+
+[workflows.workflow.metadata]
+outputType = "webview"
+
+[[ports]]
+localPort = 8000
+externalPort = 8000
+
+[[ports]]
+localPort = 35729
+externalPort = 80

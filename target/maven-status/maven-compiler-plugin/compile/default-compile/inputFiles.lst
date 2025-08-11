@@ -1,0 +1,15 @@
+/home/runner/workspace/src/main/java/com/zai/weather/dto/openweather/OpenWeatherResponse.java
+/home/runner/workspace/src/main/java/com/zai/weather/entity/WeatherData.java
+/home/runner/workspace/src/main/java/com/zai/weather/dto/WeatherResponse.java
+/home/runner/workspace/src/main/java/com/zai/weather/config/CacheConfig.java
+/home/runner/workspace/src/main/java/com/zai/weather/service/impl/OpenWeatherMapService.java
+/home/runner/workspace/src/main/java/com/zai/weather/exception/WeatherServiceException.java
+/home/runner/workspace/src/main/java/com/zai/weather/service/impl/WeatherStackService.java
+/home/runner/workspace/src/main/java/com/zai/weather/controller/WeatherController.java
+/home/runner/workspace/src/main/java/com/zai/weather/repository/WeatherRepository.java
+/home/runner/workspace/src/main/java/com/zai/weather/service/WeatherService.java
+/home/runner/workspace/src/main/java/com/zai/weather/WeatherApplication.java
+/home/runner/workspace/src/main/java/com/zai/weather/dto/weatherstack/WeatherStackResponse.java
+/home/runner/workspace/src/main/java/com/zai/weather/service/WeatherProviderService.java
+/home/runner/workspace/src/main/java/com/zai/weather/exception/GlobalExceptionHandler.java
+/home/runner/workspace/src/main/java/com/zai/weather/config/RestTemplateConfig.java

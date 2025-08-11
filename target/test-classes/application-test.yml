@@ -1,0 +1,31 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: password
+    
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: false
+    
+  cache:
+    cache-names: weatherData
+    caffeine:
+      spec: maximumSize=100,expireAfterWrite=1s
+
+weather:
+  providers:
+    weatherstack:
+      url: http://localhost:8080/weatherstack
+      api-key: test-weatherstack-key
+      timeout: 2000
+    openweathermap:
+      url: http://localhost:8080/openweathermap
+      api-key: test-openweather-key
+      timeout: 2000
+
+logging:
+  level:
+    com.zai.weather: DEBUG
